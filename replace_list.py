@@ -7,18 +7,16 @@ def replace_text_in_files(folder_path, replace_list):
             with open(file_path, 'r', encoding='utf-8') as file:
                 file_content = file.read()
 
-            # Replace text based on the provided list of tuples
             for old_text, new_text in replace_list:
                 file_content = file_content.replace(old_text, new_text)
 
-            # Write the updated content back to the file
             with open(file_path, 'w', encoding='utf-8') as file:
                 file.write(file_content)
 
             print(f'Replaced text in {filename}')
 
 if __name__ == "__main__":
-    folder_path = '.'  # Replace with the actual path to your folder
+    folder_path = '.'
     replace_list = [
         ('Jean Camargo', 'John Wick'),
         ('Eduardo Bellis', 'Sofia Reis'),
@@ -39,9 +37,38 @@ if __name__ == "__main__":
         ('http://localhost:3000/alerts/all', 'obi_alerts_all_alerts.html'),
         ('http://localhost:3000/alerts/your_alerts', 'obi_alerts_your_alerts.html'),
         ('http://localhost:3000/alerts/squads_alerts', 'obi_alerts_teams_alerts_admin.html'),
-        ('obi_alerts_your_alerts.html', 'obi_alerts_teams_alerts_admin.html'),
+        ('id="your_alerts" href="obi_alerts_teams_alerts_admin.html"', 'id="your_alerts" href="obi_alerts_your_alerts.html"'),
+        ('Highlight - comportamiento destacado', 'Highlight - Outstanding Behavior'),
         ('Front end', 'Frontend'),
         ('Mercado Libre', 'My Company'),
+        ('My Company#9', 'My Company'),
+        ('My Company#13', 'My Company'),
+        ('#298 - Compromisos', 'Compromises'),
+        ('#133 - Feedback Planning Meeting', 'Feedback Planning Meeting'),
+        ('#364 - Cierre de Sprint', 'Sprint Closing'),
+        ('#136 - Retro Meeting', 'Retro Meeting'),
+        ('Iniciativa', 'Initiative'),
+        ('Inteligencia social/ relacional', 'Social/Relational Intelligence'),
+        ('Influencia', 'Influence'),
+        ('Autonomía', 'Autonomy'),
+        ('Desarrollo de Personas', 'Development of People'),
+        ('Orientación al servicio', 'Service-oriented'),
+        ('Precisión', 'Precision'),
+        ('Atención focalizada', 'Focused attention'),
+        ('Pensamiento analítico', 'Analytical thinking'),
+        ('Excelencia Técnica', 'Tecnical excellence'),
+        ('Implementación', 'Implementation'),
+        ('Expeditividad', 'Promptness'),
+        ('Diplomacia', 'Diplomacy'),
+        ('Disponibilidad', 'Availability'),
+        ('Agente de cambio', 'Change agent'),
+        ('Determinación', 'Determination'),
+        ('Receptivo', 'Receptive'),
+        ('#133 - Zaira Villegas', 'Zaira Villegas'),
+        ('Andre Lucas', 'Evelyn Doria'),
+        ('Abner Batista', 'Edgar Cruz'),
+        ('Alexia Andrade Calmon Diaz', 'Sofia Mesa'),
+        ('Roberto Ferraz', 'Leo Donnel'),
         ('<link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">', ''),
         ('<link rel="manifest" href="http://localhost:3000/manifest.json">', ''),
         ('<link rel="icon" href="http://localhost:3000/favicon.ico">', ''),
